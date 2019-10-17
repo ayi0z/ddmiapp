@@ -1,0 +1,61 @@
+/* miniprogram/pages/home/home.wxss */
+page {
+    background-color: #8EC5FC; 
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  }
+.custom-navigationStyle{
+    background-image:none;
+}
+.user-head {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* padding-top: 40rpx; */
+    overflow: hidden;
+    height: 400rpx;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+.avatar{
+    overflow:hidden;
+    display: block;
+    width: 140rpx;
+    height: 140rpx;
+    border: 2px solid #fff;  
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.menu-body{
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-body .cu-list.grid{
+    margin-top:40rpx;
+    width: 600rpx;
+    border-radius: 10rpx;
+    background-color: transparent;
+}
+.menu-body .cu-list.grid>.cu-item view{
+    text-shadow: 0 0 3px rgba(152, 152, 152, 0.3);
+}
+.menu-body .cu-list.grid>.cu-item text{
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.menu-body image{
+    width: 140rpx;
+    height: 140rpx;
+    margin-top: 100rpx;
+}
+.menu{
+    margin-top: 160rpx;
+    font-size: 60rpx;
+}

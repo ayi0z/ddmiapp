@@ -1,0 +1,6 @@
+<view class="stars">
+  <view class="star "></view>
+  <view class="star pink "></view>
+  <view class="star blue "></view>
+  <view class="star yellow "></view>
+</view>

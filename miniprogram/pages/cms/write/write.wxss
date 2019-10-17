@@ -1,0 +1,44 @@
+/* miniprogram/pages/cms/write/write.wxss */
+
+page{
+    height: 100%;
+    min-height: 1000rpx;
+}
+.bg-img{
+    background-size:30%;
+    height: 100%;
+}
+.text-sub{
+    vertical-align: sub;
+}
+.tag{
+    display: flex;
+}
+.tag-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150rpx;
+}
+.tag-group,
+.tag-group-flex {
+    padding: 10rpx;
+}
+.tag-group-flex{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.tag-item,
+.tag-item-flex{
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+}
+.tag-item-flex{
+    margin: 5rpx;
+}
+.tag-icon {
+    font-size: 30rpx;
+    margin-right: 5rpx;
+}

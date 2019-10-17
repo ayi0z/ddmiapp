@@ -1,0 +1,45 @@
+<cu-stars></cu-stars>
+<view class="user-head">
+    <view class="avatar" bindtap="doReLoad">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="margin-top-sm">
+        <open-data type="userNickName"></open-data>
+        的心愿单
+    </view>
+    <view class="flex text-center text-white action-menu-wrapper">
+        <view class="flex flex-sub flex-direction action-menu-item">
+            <view class="margin-top-sm action-menu" bindtap="doReLoad">
+                <text class="cuIcon-refresh"></text>
+                每5分钟可手动刷新一次
+            </view>
+        </view>
+    </view>
+</view>
+<cu-loading-progress signal="{{loadingProgressSignal}}"></cu-loading-progress>
+<scroll-view scroll-y class="scroll-view" lower-threshold="150" bindscrolltolower="doLoadMore">
+    <view class="cu-list menu-avatar" wx:for="{{articles}}" wx:key wx:for-item="art" wx:for-index="artidx">
+        <view class="cu-item" wx:for="{{art}}" wx:key data-id="{{item._id}}" bindtap="doViewArticle">
+            <view class="avatar">
+                <view class="cu-avatar radius lg" style="background-image:url({{item.imgUrls}});"></view>
+                <view class="cu-tag line-green radius sm">{{item.tab}}</view>
+            </view>
+            <view class="content">
+                <view class="text-grey">
+                    <text class="text-cut">{{item.title}}</text>
+                </view>
+                <view class="text-gray text-sm flex">
+                    <text class="text-cut">{{item.desc}}</text>
+                </view>
+                <view>
+                    <view class="cu-tag line-red radius sm" wx:for="{{item.tags}}" wx:key wx:for-item="tag">
+                        {{tag}}
+                    </view>
+                </view>
+            </view>
+            <view class="action" data-wished="{{item.wished}}" data-id="{{item._id}}" data-pidx="{{artidx}}" capture-catch:tap="doWish">
+                <view class="cuIcon-{{ item.wished?'likefill':'like' }} text-red text-icon"></view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

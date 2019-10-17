@@ -1,0 +1,81 @@
+<cu-custom bgColor="custom-navigationStyle" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">新品发布</view>
+</cu-custom>
+<cu-loading-progress signal="{{loadingProgressSignal}}"></cu-loading-progress>
+<form bindsubmit="doFormSubmit" bindreset="doFormReset">
+    <view class="cu-form-group">
+        <input placeholder="标题" name="title" value="{{title}}"></input>
+        <text class="cuIcon-title text-green"></text>
+    </view>
+    <view class="cu-form-group">
+        <textarea placeholder="简短描述" name="desc" value="{{desc}}"></textarea>
+        <text class="cuIcon-titles text-green"></text>
+    </view>
+    <view class="cu-bar bg-white margin-top-sm tag">
+        <view class="tag-title">
+            <text class="cuIcon-cascades text-green tag-icon"></text>
+            <text>分类</text>
+        </view>
+        <radio-group class="cu-list grid col-3 tag-group" name="tab" bindchange="doTabChange">
+            <view class="tag-item" wx:for="{{tabnavs}}" wx:key>
+                <radio id="{{item.key}}" hidden value="{{item.key}}" checked="{{item.key === tab}}"></radio>
+                <label class="cu-tag radius {{item.key === tab ? 'bg-red':'line-grey'}}" for="{{item.key}}">
+                    <text class="cuIcon-{{item.icon}} text-{{item.key === tab ? 'white':'red'}} tag-icon"></text>
+                    {{item.text}}
+                </label>
+            </view>
+        </radio-group>
+    </view>
+    <cus-img-upload count="3" img-urls="{{imgUrls}}" show-count="{{true}}" bindsyncdata="doImgUrlsSync">
+        <view class="action text-red">建议尺寸:320x568, 至少一张图</view>
+    </cus-img-upload>
+    <view class="cu-bar bg-white margin-top-sm tag">
+        <view class="tag-title">
+            <text class="cuIcon-tag text-green tag-icon"></text>
+            <text>标签</text>
+        </view>
+        <checkbox-group class="tag-group-flex" name="tags" bindchange="doTagCheck">
+            <view class="tag-item-flex" wx:for="{{tagsList}}" wx:key>
+                <checkbox id="tag_{{index}}" hidden value="{{item.tag}}" checked="{{item.checked}}"></checkbox>
+                <label class="cu-tag radius {{item.checked ? 'bg-blue':'line-grey'}}" for="tag_{{index}}">
+                    {{item.tag}}
+                </label>
+            </view>
+        </checkbox-group>
+    </view>
+    <cus-img-upload count="1" title="推荐栏" img-urls="{{recomdImgUrl}}" bindsyncdata="doRecomdImgUrlsSync">
+        <view class="action text-red">尺寸:320x179, 可不填</view>
+    </cus-img-upload>
+    <view class="padding flex flex-direction animation-scale-up" wx:if="{{!isSubmitting}}">
+        <button class="cu-btn bg-red lg shadow" form-type="submit">保存</button>
+    </view>
+    <view class="bg-white padding margin-top-sm animation-scale-up" wx:if="{{isSubmitting}}">
+        <view class="cu-steps">
+            <view class="cu-item text-blue animation-slide-right" wx:if="{{stepIndex%1===0.5}}" bindtap="doEdit">
+                <text class="cuIcon-edit" data-index=""></text>
+                编辑
+            </view>
+            <view class="cu-item {{stepIndex < 0 ? '' : stepIndex == 0.5 ? 'text-red' : 'text-green'}}">
+                <text class="{{stepIndex == 0 ? 'cuIcon-loading iconfont-spin':'num'}} {{stepIndex == 0.5 ? 'err':''}}" data-index="0"></text>
+                上传图片
+            </view>
+            <view class="cu-item {{stepIndex < 1 ? '' : stepIndex == 1.5 ? 'text-red' : 'text-green'}}">
+                <text class="{{stepIndex == 1 ? 'cuIcon-loading iconfont-spin':'num'}} {{stepIndex == 1.5 ? 'err':''}}" data-index="1"></text>
+                保存数据
+            </view>
+            <view class="cu-item {{stepIndex < 2 ? '' : stepIndex == 2.5 ? 'text-red' : 'text-green'}}">
+                <text class="{{stepIndex == 2 ? 'cuIcon-loading iconfont-spin':'num'}} {{stepIndex == 2.5 ? 'err':''}}" data-index="2"></text>
+                设置轮播图
+            </view>
+            <view class="cu-item {{stepIndex < 3 ? '' :  stepIndex == 3.5 ? 'text-red' : 'text-green'}}">
+                <text class="num {{stepIndex == 3.5 ? 'err':''}}" data-index="2"></text>
+                完成
+            </view>
+            <view class="cu-item text-blue animation-slide-left" wx:if="{{stepIndex==3}}">
+                <text class="cuIcon-add" data-index=""></text>
+                <button class="cu-btn bg-blue sm shadow" form-type="reset">新建</button>
+            </view>
+        </view>
+    </view>
+</form>

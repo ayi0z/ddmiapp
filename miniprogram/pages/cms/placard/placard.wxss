@@ -1,0 +1,50 @@
+
+  .toolbar {
+    box-sizing: border-box;
+    border-bottom: 0;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+.iconfont {
+    display: inline-block;
+    padding: 12rpx 12rpx;
+    width: 50rpx;
+    height: 50rpx;
+    cursor: pointer;
+    font-size: 45rpx;
+  }
+  
+  .ql-container {
+    box-sizing: border-box;
+    padding: 12rpx;
+    width: 100%;
+    min-height: 357rpx;
+    height:357rpx;
+    background: #fff;
+    font-size: 35rpx;
+    line-height: 1.5;
+    margin-top: 10rpx;
+  }
+  
+  .ql-active {
+    color: #06c;
+  }
+  
+  .btn-submit{
+    flex: 2;
+    margin-right: 10rpx;
+  }
+  .tip{
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    height: 140rpx;
+    line-height: 140rpx;
+    font-size: 50rpx;
+  }
+  .tip-hidden{
+    opacity: 0;
+  }

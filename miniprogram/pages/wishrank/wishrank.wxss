@@ -1,0 +1,15 @@
+page {
+    background-color: #A9C9FF;
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);            
+}
+.text-icon{
+    font-size: 40rpx;
+}
+.cu-tag.list-no{
+    right: 80rpx;
+    height: 30rpx;
+    opacity: .5;
+}
+.cu-list.menu-avatar>.cu-item .content .cu-tag.sm{
+    height: 31rpx;
+}

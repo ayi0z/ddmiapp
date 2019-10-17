@@ -1,0 +1,17 @@
+<cu-custom bgColor="custom-navigationStyle" isBack="{{true}}">
+    <view slot="backText">
+        <text class="cuIcon-calendar"></text>
+        {{date}}
+    </view>
+</cu-custom>
+<cu-loading-progress signal="{{loadingProgressSignal}}"></cu-loading-progress>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-orange"></text>
+        {{title}}
+    </view>
+    <view class="action" bindtap="doEdit" data-id="{{id}}" wx:if="{{isAdmin}}">
+        <text class="cuIcon-edit text-blue"></text>
+    </view>
+</view>
+<editor id="editor" class="ql-container editor" showImgSize showImgToolbar showImgResize read-only="{{true}}" bindready="onEditorReady"></editor>

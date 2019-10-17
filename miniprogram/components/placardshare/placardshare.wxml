@@ -1,0 +1,22 @@
+<view class="cu-modal show animation-scale-up'" wx:if="{{show}}">
+    <view class="cu-dialog" style="width:{{width}}px;">
+        <image src="{{buildsignal ? loadingBase64 : placardSrc}}" mode="aspectFill" 
+            show-menu-by-longpress bindload="onPlacardLoaded" style="height:{{height}}px;"/>
+        <text wx:if="{{buildsignal}}" class="loading-text text-grey text-shadow">正在生成图片...</text>
+        <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub text-grey" bindtap="doClose">取消</view>
+            <button class="action margin-0 flex-sub text-green solid-left cu-btn btn-share" disabled="{{!readyShare}}"
+                style="background-color:transparent;" open-type="share" data-id="{{sense.id}}"
+                data-imgurl="{{placardSrc}}" data-title="{{title}}" data-desc="{{desc}}">
+                <text class="cuIcon-forward" style="margin-right:10rpx;"></text>
+                发给朋友
+            </button>
+            <button class="action margin-0 flex-sub text-green solid-left cu-btn btn-share" disabled="{{!readyShare}}"
+                style="background-color:transparent;" data-imgurl="{{placardSrc}}" bindtap="doSave">
+                <text class="cuIcon-share" style="margin-right:10rpx;"></text>
+                保存至相册
+            </button>
+        </view>
+    </view>
+</view>
+<placard-builder imgsrc="{{imgsrc}}" title="@{{title}}" desc="{{desc}}" sense="{{sense}}" buildsignal="{{buildsignal}}" bind:listener="doPlacardBuilded"></placard-builder>

@@ -1,0 +1,1 @@
+<canvas canvas-id="piccanvas" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;position:fixed;left:{{canvasLeft}}px;" />

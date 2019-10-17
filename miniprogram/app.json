@@ -1,0 +1,47 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/article/article",
+        "pages/notice/notice",
+        "pages/wish/wish",
+        "pages/wishrank/wishrank",
+        "pages/notice/view",
+        "pages/cms/profile/profile",
+        "pages/cms/placard/placard",
+        "pages/cms/write/write"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "呆呆韩购指南",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#000000",
+        "selectedColor": "#000000",
+        "backgroundColor": "#000000",
+        "list": [
+            {
+                "pagePath": "pages/index/index"
+            },
+            {
+                "pagePath": "pages/wish/wish"
+            },
+            {
+                "pagePath": "pages/wishrank/wishrank"
+            },
+            {
+                "pagePath": "pages/notice/notice"
+            }
+        ]
+    },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom",
+        "cu-stars": "/components/stars/stars",
+        "cu-loading-progress": "/components/loadingprogress/loadingprogress"
+    },
+    "sitemapLocation": "sitemap.json"
+}

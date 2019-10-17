@@ -1,0 +1,4 @@
+<view class='load-progress {{ progress>0 ? "show" : "hide"}}'>
+    <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-progress}}%, 0px, 0px);background-color:{{color}};"></view>
+    <view class='load-progress-spinner text-green' style="color:{{color}}"></view>
+</view>

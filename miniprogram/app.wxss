@@ -1,0 +1,29 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/animation.wxss";
+@import "style/iconfont.wxss";
+/**app.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.cu-load.load-modal image{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.custom-navigationStyle{
+  background-image: linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%);
+  color: #f6f6f6;
+}
+.custom-navigationStyle-cms{
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  color: #f6f6f6;
+}
+.bg-shadeLeft{
+  background-image:linear-gradient(to right, rgb(43, 43, 43, .5),rgb(155, 155, 155, 0.1), rgba(0, 0, 0, 0));
+  color:var(--white);  
+}

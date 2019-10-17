@@ -1,0 +1,33 @@
+<cu-stars></cu-stars>
+<cu-custom bgColor="custom-navigationStyle" isBack="{{true}}">
+	<view slot="backText"></view>
+</cu-custom>
+<view class="user-head">
+	<view class="avatar">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<view class="margin-top-sm">
+		<open-data type="userNickName"></open-data>
+	</view>
+</view>
+<view class="menu-body">
+	<view class="cu-list grid col-2 no-border ">
+		<view class="cu-item" bindtap="doGo" data-url="cms/placard/placard">
+			<view class="cuIcon-notification text-pink"></view>
+			<text>通告.行程</text>
+		</view>
+		<view class="cu-item" bindtap="doGo" data-url="cms/write/write">
+			<view class="cuIcon-write text-green"></view>
+			<text>发布新品</text>
+		</view>
+		<view class="cu-item" bindtap="doGoTab" data-url="wishrank/wishrank">
+			<view class="cuIcon-we text-yellow"></view>
+			<text>种草榜</text>
+		</view>
+		<view class="cu-item" bindtap="doGoBack" data-url="index/index">
+			<view class="cuIcon-home text-blue"></view>
+			<text>返回</text>
+		</view>
+	</view>
+	<image src="/images/logo.png" bindtap="doGoTab" data-url="index/index"/>
+</view>

@@ -1,0 +1,5 @@
+.load-progress{
+    position: absolute;
+    width: 100%;
+    top:auto;
+}

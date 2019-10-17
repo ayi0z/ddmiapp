@@ -1,0 +1,7 @@
+{
+  "disableScroll":true,
+  "usingComponents": {
+    "cus-img-upload": "/components/imgupload/imgupload",
+    "cus-tipbar": "/components/tipbar/tipbar"
+  }
+}

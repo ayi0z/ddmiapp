@@ -1,0 +1,88 @@
+page {
+    background-color: #FAACA8; 
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+}
+.custom-navigationStyle{
+    background-image: none;
+}
+.cu-bar.fixed, .nav.fixed{
+    box-shadow: none;
+}
+
+.article-container,
+swiper,
+swiper image{
+    height: 100%;
+    width: 100%;
+}
+.action-panel{
+    position: fixed;
+    right: 30rpx;
+    width: 130rpx;
+    bottom: 200rpx;
+    z-index: 9999;
+}
+.cu-list.grid{
+    background-color: transparent;
+}
+.cu-list.grid>.cu-item view{
+    text-shadow: 0 0 5px rgba(152, 152, 152, 0.5);
+    font-size: 70rpx;
+}
+.cu-list.grid>.cu-item text{
+    color: #f6f6f6;
+    font-weight: 300;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.cu-list.grid>.cu-item [class*=cuIcon]{
+    font-size: 70rpx;
+}
+.text-white{
+    color: #f6f6f6;
+}
+
+.article-desc-container{
+    position: fixed;
+    z-index: 9998;
+    bottom: 0;
+    width: 600rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.article-desc{
+    width: 100%;
+    padding-left: 20rpx;
+    padding-bottom: 10rpx;
+}
+.article-tag{
+    padding: 0 10rpx 10rpx 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.article-tag .cu-tag{
+    margin: 5rpx 5rpx 0 0 ; 
+    border-radius: 10rpx;
+}
+.article-title{
+    color: #f6f6f6
+}
+.bg-shadeLeft{
+    min-height: 100rpx;
+}
+
+.btn-share{
+    background-color: transparent;
+    line-height: 70rpx;
+}
+
+
+.cu-dialog{
+    width:400rpx;
+}
+.bg-img{
+    height: 400rpx;
+}
+.qrcode{
+    height: 400rpx;
+}

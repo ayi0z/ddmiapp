@@ -1,0 +1,45 @@
+<view class="cu-bar tabbar bg-white foot">
+    <view class="action {{ curTab==='index'?  'text-green' : 'text-gray' }}" data-tab="index" bindtap="doSwitchTab">
+        <view class="cuIcon-homefill"></view>
+        首页
+    </view>
+    <view class="action {{ curTab==='wish'?  'text-green' : 'text-gray' }}" data-tab="wish" bindtap="doSwitchTab">
+        <view class="cuIcon-like"></view>
+        喜欢
+    </view>
+    <view class="action text-gray add-action" wx:if="{{isAdmin}}" bindtap="doOpenCmenu">
+        <button class="cu-btn cuIcon-add bg-green shadow text-white"></button>
+        发布
+    </view>
+    <view class="action {{ curTab==='wishrank'?  'text-green' : 'text-gray' }}" data-tab="wishrank" bindtap="doSwitchTab">
+        <view class="cuIcon-we"></view>
+        种草榜
+    </view>
+    <view class="action {{ curTab==='notice'?  'text-green' : 'text-gray' }}" data-tab="notice" bindtap="doSwitchTab">
+        <view class="cuIcon-notification">
+            <view class="cu-tag badge"></view>
+        </view>
+        通告
+    </view>
+</view>
+<view class="c-wrapper {{openCmenu ? 'c-open':''}}" wx:if="{{isAdmin}}">
+    <view class="c-item-wrapper" hover-class="active" data-tab="cmsnotice" bindtap="doTapCmenu">
+        <view class="c-item">
+            <view class="cuIcon-notification text-pink c-item-icon"></view>
+            <text class="c-item-text">通告</text>
+        </view>
+    </view>
+    <view class="c-item-wrapper" hover-class="active" data-tab="cmsarticle" bindtap="doTapCmenu">
+        <view class="c-item">
+            <view class="cuIcon-write text-pink c-item-icon"></view>
+            <text class="c-item-text">新品</text>
+        </view>
+    </view>
+    <view class="c-item-wrapper" hover-class="active" data-tab="cmsprofile" bindtap="doTapCmenu">
+        <view class="c-item">
+            <view class="cuIcon-profile text-pink c-item-icon"></view>
+            <text class="c-item-text">我</text>
+        </view>
+    </view>
+</view>
+<view class="c-overlay {{openCmenu ? 'c-overlay-open':''}}" bindtap="doCloseCmenu" wx:if="{{isAdmin}}"></view>

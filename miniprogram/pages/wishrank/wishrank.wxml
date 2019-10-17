@@ -1,0 +1,35 @@
+<cus-top-banner></cus-top-banner>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-orange "></text>
+        最受关注榜前{{limit}}
+    </view>
+</view>
+<cu-loading-progress signal="{{loadingProgressSignal}}"></cu-loading-progress>
+<scroll-view scroll-y style="height:715rpx;">
+    <view class="cu-list menu-avatar">
+        <view class="cu-item" wx:for="{{articles}}" wx:key data-id="{{item._id}}" bindtap="doViewArticle">
+            <view class="cu-avatar round lg" style="background-image:url({{item.imgUrls}});">
+                <view class="cu-tag badge bg-grey list-no">{{item.sort+1}}</view>
+            </view>
+            <view class="content">
+                <view class="text-grey">
+                    <text class="text-cut">{{item.title}}</text>
+                </view>
+                <view class="text-gray text-sm flex">
+                    <text class="text-cut">{{item.desc}}</text>
+                </view>
+                <view>
+                    <view class="cu-tag bg-green radius sm">{{item.tab}}</view>
+                    <view class="cu-tag line-pink radius sm" wx:for="{{item.tags}}" wx:key wx:for-item="tag">
+                        {{tag}}
+                    </view>
+                </view>
+            </view>
+            <view class="action">
+                <view class="cuIcon-likefill text-red text-icon"></view>
+                <view class="text-grey text-sm lg">{{item.wish}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

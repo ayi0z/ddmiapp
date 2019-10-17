@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "placard-builder":"/components/placardbuilder/placardbuilder"
+    }
+}

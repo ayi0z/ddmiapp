@@ -1,0 +1,22 @@
+<view class="cu-bar bg-white margin-top-sm">
+	<view class="action">
+		{{title}}
+	</view>
+	<slot></slot>
+	<view class="action" wx:if="{{showCount}}">
+		{{Imgs.length}}/{{count}}
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="grid col-3 grid-square flex-sub">
+		<view class="bg-img" wx:for="{{Imgs}}" wx:key="{{index}}" bindtap="doViewImage" data-url="{{Imgs[index]}}">
+			<image src='{{Imgs[index]}}' mode='aspectFill'></image>
+			<view class="cu-tag bg-red" catchtap="doDelImg" data-index="{{index}}">
+				<text class="cuIcon-close"></text>
+			</view>
+		</view>
+		<view class="solids" bindtap="doChooseImage" wx:if="{{Imgs.length < count}}">
+			<text class="cuIcon-cameraadd"></text>
+		</view>
+	</view>
+</view>

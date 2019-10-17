@@ -1,0 +1,3 @@
+<view class="cu-load tipbar bg-gradual-{{color}} shadow-blur shadow-lg {{action}}" wx:if="{{action}}">
+    {{text}}
+</view>

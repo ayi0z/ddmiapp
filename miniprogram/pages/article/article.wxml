@@ -1,0 +1,52 @@
+<cu-custom bgColor="custom-navigationStyle" isBack="{{true}}">
+	<view slot="backText"></view>
+</cu-custom>
+<swiper class="cu-bar fixed" circular vertical current="{{currentSwiperIndex}}" bindchange="doSwitchArticle">
+	<block wx:for="{{articles}}" wx:key>
+		<swiper-item item-id="{{item.sort}}">
+			<view class="article-container">
+				<swiper class="square-dot" skip-hidden-item-layout indicator-dots circular bindchange="doSwitchImags">
+					<swiper-item wx:for="{{item.imgUrls}}" wx:key wx:for-item="imgurl">
+						<image lazy-load mode="aspectFill" src="{{imgurl}}" />
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="article-desc-container">
+				<view class="article-desc article-tag" wx:if="{{item.tags.length>0}}">
+					<view class="cu-tag radius line-red sm" wx:for="{{item.tags}}" wx:key wx:for-item="tag">{{tag}}</view>
+				</view>
+				<view class="article-desc article-title text-white">@{{item.title}}</view>
+				<view class="article-desc bg-shadeLeft">{{item.desc}}</view>
+			</view>
+			<view class="action-panel cu-list grid col-1 no-border">
+				<view class="cu-item" bindtap="doWish" data-wish="{{item.wish}}" data-wished="{{item.wished}}" data-id="{{item.id}}">
+					<view class="{{item.wished ? 'cuIcon-likefill':'cuIcon-like'}} text-red"></view>
+					<text>{{item.wishtxt}}</text>
+				</view>
+				<view class="cu-item" data-item="{{item}}" data-imgindex="{{currentImgIndex}}" bindtap="doShare">
+					<view class="cuIcon-share text-pink"></view>
+					<text class="text-green">分享</text>
+				</view>
+				<view class="cu-item" bindtap="doChat">
+					<view class="cuIcon-weixin text-olive"></view>
+					<text>聊聊</text>
+				</view>
+				<view class="cu-item" bindtap="doEdit" data-id="{{item._id}}" wx:if="{{isAdmin}}">
+					<view class="cuIcon-write text-blue"></view>
+					<text>编辑</text>
+				</view>
+			</view>
+		</swiper-item>
+	</block>
+</swiper>
+<view class="cu-modal {{ showQrcode ? 'show' : '' }}">
+  <view class="cu-dialog">
+      <view class="cu-bar justify-end text-white">
+		<image class="qrcode" mode="aspectFit" show-menu-by-longpress="{{true}}" src="/images/qrcode.png" />
+      </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="doChat">扫描二维码添加好友</view>
+    </view>
+  </view>
+</view>
+<placard-share imgsrc="{{placard.imgsrc}}" title="{{placard.title}}" desc="{{placard.desc}}" sense="{{placard.sense}}" sharesignal="{{placard.sharesignal}}"></placard-share>

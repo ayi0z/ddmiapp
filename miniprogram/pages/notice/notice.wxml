@@ -1,0 +1,38 @@
+<cu-stars></cu-stars>
+<view class="user-head">
+    <view class="avatar" bindtap="doReLoad">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="margin-top-sm">
+        <!-- <open-data type="userNickName"></open-data> -->
+        呆呆 通告栏
+    </view>
+    <view class="flex text-center text-white action-menu-wrapper">
+        <view class="flex flex-sub flex-direction action-menu-item">
+            <view class="margin-top-sm action-menu" bindtap="doReLoad">
+                <text class="cuIcon-notification"></text>
+                新品预告、行程安排、新鲜活动
+            </view>
+        </view>
+    </view>
+</view>
+<cu-loading-progress signal="{{loadingProgressSignal}}"></cu-loading-progress>
+<scroll-view scroll-y class="scroll-view">
+    <view class="cu-card article" wx:for="{{notices}}" wx:key data-id="{{item._id}}" bindtap="doView">
+        <view class="cu-item shadow">
+            <view class="title">
+                <view class="text-cut">{{item.title}}</view>
+            </view>
+            <view class="content">
+                <image src="{{item.img}}" mode="aspectFill" wx:if="{{item.img}}"></image>
+                <view class="desc">
+                    <view class="text-content">{{item.text}}</view>
+                    <view style="align-self:flex-end;">
+                        <view class="cu-tag bg-green light sm round">{{item.date}}</view>
+                    </view>
+                </view>
+            </view>
+            <text class="cuIcon-new c-read-icon text-shadow text-red light" wx:if="{{!item.readed}}"></text>
+        </view>
+    </view>
+</scroll-view>

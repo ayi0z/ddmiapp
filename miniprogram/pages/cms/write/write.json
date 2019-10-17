@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "cus-img-upload": "/components/imgupload/imgupload"
+  }
+}

@@ -1,0 +1,10 @@
+.btn-share{
+   padding: 0rpx;
+   background-color: transparent;
+   line-height: 70rpx;
+}
+.loading-text{
+   position: absolute;
+   left:34%;
+   top:74%;
+}

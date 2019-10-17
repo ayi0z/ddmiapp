@@ -1,0 +1,14 @@
+<swiper 
+    autoplay="true"
+    indicator-dots="true"
+    indicator-active-color="#ffffff"
+    circular="true"
+    class="screen-swiper square-dot"
+    interval="3000"
+    duration="500"
+    skip-hidden-item-layout="{{true}}"
+    >
+    <swiper-item wx:for="{{topBanners}}" wx:key data-lid="{{item.lid}}" data-key="{{item.key}}" bindtap="doViewBanner">
+        <image src="{{item.imgurl}}" mode="widthFix"/>
+    </swiper-item>
+</swiper>
