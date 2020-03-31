@@ -19,7 +19,7 @@
 				<view class="article-desc bg-shadeLeft">{{item.desc}}</view>
 			</view>
 			<view class="action-panel cu-list grid col-1 no-border">
-				<view class="cu-item" bindtap="doWish" data-wish="{{item.wish}}" data-wished="{{item.wished}}" data-id="{{item.id}}">
+				<view class="cu-item" bindtap="doWish" data-wish="{{item.wish}}" data-wished="{{item.wished}}" data-id="{{item._id}}">
 					<view class="{{item.wished ? 'cuIcon-likefill':'cuIcon-like'}} text-red"></view>
 					<text>{{item.wishtxt}}</text>
 				</view>

@@ -72,7 +72,7 @@ Page({
         this._p_LastLoadingTimeStamp = new Date().getTime()
         db.db_query({
             collection: 'article',
-            where: { id: _.in(app.globalData.USERINFO.wish) },
+            where: { _id: _.in(app.globalData.USERINFO.wish) },
             sort: { uptime: 'desc' },
             skip:sortidx,
             limit:20
