@@ -1,6 +1,6 @@
 {
   "navigationStyle":"custom",
-  "enablePullDownRefresh":true,
+  "enablePullDownRefresh":false,
   "onReachBottomDistance":100,
   "usingComponents": {
     "cus-top-banner": "/components/topbanner/topbanner"

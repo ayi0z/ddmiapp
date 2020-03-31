@@ -224,7 +224,7 @@ Page({
             title: c.title,
             wish: c.wish || 0,
             wishtxt: app._Fn_FormatNumber(c.wish || 0),
-            wished: app.globalData.USERINFO.wish.includes(c._id),
+            wished: app.globalData.USERINFO.wish.includes(c.id),
             sort: fn_sort(c, index)
         }))
     },
